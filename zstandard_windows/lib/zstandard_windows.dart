@@ -41,7 +41,7 @@ class ZstandardWindows extends ZstandardPlatform {
   }
 
   @override
-  Future<Uint8List?> compress(Uint8List data, int compressionLevel) async {
+  Uint8List? compress(Uint8List data, int compressionLevel) {
     final int srcSize = data.lengthInBytes;
     final Pointer<Uint8> src = malloc.allocate<Uint8>(srcSize);
     src.asTypedList(srcSize).setAll(0, data);
@@ -70,7 +70,7 @@ class ZstandardWindows extends ZstandardPlatform {
   }
 
   @override
-  Future<Uint8List?> decompress(Uint8List data) async {
+  Uint8List? decompress(Uint8List data) {
     final int compressedSize = data.lengthInBytes;
     final Pointer<Uint8> src = malloc.allocate<Uint8>(compressedSize);
     src.asTypedList(compressedSize).setAll(0, data);

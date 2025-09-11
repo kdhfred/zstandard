@@ -20,8 +20,8 @@ class Zstandard {
 
   Future<String?> getPlatformVersion() => instance.getPlatformVersion();
 
-  Future<Uint8List?> compress(Uint8List data, int compressionLevel) =>
+  Uint8List? compress(Uint8List data, int compressionLevel) =>
       instance.compress(data, compressionLevel);
 
-  Future<Uint8List?> decompress(Uint8List data) => instance.decompress(data);
+  Uint8List? decompress(Uint8List data) => instance.decompress(data);
 }

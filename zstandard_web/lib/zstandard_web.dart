@@ -27,7 +27,7 @@ class ZstandardWeb extends ZstandardPlatform {
   }
 
   @override
-  Future<Uint8List?> compress(Uint8List data, int compressionLevel) async {
+  Uint8List? compress(Uint8List data, int compressionLevel) {
     if (data.length < 9) return data;
     var compressedData = js.context.callMethod('compressData', [data, compressionLevel]);
     if (compressedData != null) {
@@ -38,7 +38,7 @@ class ZstandardWeb extends ZstandardPlatform {
   }
 
   @override
-  Future<Uint8List?> decompress(Uint8List data) async {
+  Uint8List? decompress(Uint8List data) {
     if (data.length < 9) return data;
     var decompressedData = js.context.callMethod('decompressData', [data]);
     if (decompressedData != null) {

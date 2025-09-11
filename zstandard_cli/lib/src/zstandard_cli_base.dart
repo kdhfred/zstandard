@@ -13,11 +13,10 @@ class ZstandardCLI implements ZstandardInterface {
       ZstandardCLIBindings(openZstdLibrary());
 
   @override
-  @override
-  Future<Uint8List?> compress(
+  Uint8List? compress(
     Uint8List data, {
     int compressionLevel = 3,
-  }) async {
+  }) {
     if (data.isEmpty) return data;
     final int srcSize = data.lengthInBytes;
     final Pointer<Uint8> src = malloc.allocate<Uint8>(srcSize);
@@ -47,7 +46,7 @@ class ZstandardCLI implements ZstandardInterface {
   }
 
   @override
-  Future<Uint8List?> decompress(Uint8List data) async {
+  Uint8List? decompress(Uint8List data) {
     if (data.isEmpty) return data;
     final int compressedSize = data.lengthInBytes;
     final Pointer<Uint8> src = malloc.allocate<Uint8>(compressedSize);

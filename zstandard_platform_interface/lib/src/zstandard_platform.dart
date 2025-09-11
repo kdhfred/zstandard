@@ -29,11 +29,11 @@ abstract class ZstandardPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<Uint8List?> compress(Uint8List data, int compressionLevel) {
+  Uint8List? compress(Uint8List data, int compressionLevel) {
     throw UnimplementedError('compress() has not been implemented.');
   }
 
-  Future<Uint8List?> decompress(Uint8List data) {
+  Uint8List? decompress(Uint8List data) {
     throw UnimplementedError('decompress() has not been implemented.');
   }
 }
