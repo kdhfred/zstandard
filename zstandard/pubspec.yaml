@@ -2,7 +2,7 @@ name: zstandard
 description: "Flutter plugin to implement Zstandard compression"
 version: 1.3.27
 homepage: https://landamessenger.com
-repository: https://github.com/landamessenger/zstandard
+repository: https://github.com/kdhfred/zstandard
 
 environment:
   sdk: ^3.5.3
@@ -27,13 +27,41 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  zstandard_android: ^1.3.27
-  zstandard_ios: ^1.3.27
-  zstandard_linux: ^1.3.27
-  zstandard_macos: ^1.3.27
-  zstandard_platform_interface: ^1.3.27
-  zstandard_web: ^1.3.27
-  zstandard_windows: ^1.3.27
+  zstandard_android:
+    git:
+      url: https://github.com/kdhfred/zstandard.git
+      path: zstandard_android
+      ref: master
+  zstandard_ios:
+    git:
+      url: https://github.com/kdhfred/zstandard.git
+      path: zstandard_ios
+      ref: master
+  zstandard_linux:
+    git:
+      url: https://github.com/kdhfred/zstandard.git
+      path: zstandard_linux
+      ref: master
+  zstandard_macos:
+    git:
+      url: https://github.com/kdhfred/zstandard.git
+      path: zstandard_macos
+      ref: master
+  zstandard_platform_interface:
+    git:
+      url: https://github.com/kdhfred/zstandard.git
+      path: zstandard_platform_interface
+      ref: master
+  zstandard_web:
+    git:
+      url: https://github.com/kdhfred/zstandard.git
+      path: zstandard_web
+      ref: master
+  zstandard_windows:
+    git:
+      url: https://github.com/kdhfred/zstandard.git
+      path: zstandard_windows
+      ref: master
 
 dev_dependencies:
   flutter_lints: ^4.0.0
